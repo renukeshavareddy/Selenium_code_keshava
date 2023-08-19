@@ -1,0 +1,427 @@
+
+-------31/7/2023-----------------------
+Difference between manual testing and automation?
+
+Automation:
+-Execution will be fast and also we can execute n number of times.
+-Experts need to prepare automation scripts,less resources
+-Prepare automation script will take time-- we need experts/we follow manual test cases
+-It will take time to update your automation scripts
+-Automation will not make any errors while executing scripts.
+-Generate Results file will be shared with clients - it will store the exceptions also
+-Scripts will generate each steps screenshots or test fail screenshots.
+-Parallel execution is possible with automation scripts -mutiple browsers execution
+
+
+
+Manual Testing:
+-It will take time to execute manual test cases.
+-Need more resouces to work as manual testers.
+-Documentation will take time -- we need functional knowledge
+-Update manual test cases will not take much time.
+-Human error might occur while your executing test cases.
+-Documentation of test pass/fail. manually take the screenshots and capture the exceptions.
+-Manual test cases - it is not possible with single resources
+
+
+
+Why we are learning selenium?
+
+-Opensource tool  -free of cost.
+-supporting multiple scripting langugaes like java, python, perl, javascript, ruby,c#
+-supporting mutiple OS like Mac, Windows, Linux
+-supporting mutiple browsers like chrome,edge,ie, firefox,opera,safari (latest versions)
+-headless browser  --this is very fast in execution
+-selenium is browser automation functional testing tool
+
+
+
+What we can automate with selenium tool?
+
+-web application
+-we cannot automate : note.txt, calc, open window, desktop applications.
+-less support for selenium
+
+
+Help document of selenium
+-https://www.selenium.dev/
+
+
+Three components of selenium
+-Selenium WebDriver(Interface)  --we implement our OOPS concepts
+-Selenium IDE        --record web page  
+-Selenium Grid       --parallel and sequalation execution on mutiple browsers and mutiple OS.
+
+
+-------01/8/2023-----------------------
+
+Selenium IDE:  chrome browser
+-record web page
+-run recorded script
+-understand selenium locators
+
+what are selenium locators?
+
+-id (text as attributes)
+-name (text as attributes)
+
+-xpath
+-cssselector
+-linktext
+-partiallinktext
+-tagname
+
+username --- text field object
+selenium ide recorded script
+id=username
+name=username
+
+
+css=#username
+xpath=//input[@id='username']
+xpath=//form[@id='register_form']/table/tbody/tr[2]/td[2]/input
+
+
+objects will have tagname, attributes
+
+html code
+<input name="username" type="text" class="reg_input" id="username" value="" maxlength="20">
+
+
+tagname = text field = input
+
+attributes:
+name="username"
+id="username"
+
+type="text"
+class="reg_input"
+value=""
+maxlength="20"
+
+
+password html code
+<input name="password" type="password" class="reg_input" id="password" value="" maxlength="20" aria-autocomplete="list">
+
+tagname=input
+
+name="password"
+id="password"
+
+type="password"
+class="reg_input"
+value=""
+maxlength="20"
+aria-autocomplete="list"
+
+Registration button html code
+
+<input type="submit" name="Submit" id="Submit" class="reg_button" value="Register">
+
+tagname=input
+type="submit"
+name="Submit" 
+id="Submit"
+class="reg_button"
+value="Register"
+
+
+
+Objects in web page:
+
+button object
+
+tagname: input, button             action: .click
+tagname: input                     action: .enter text
+tagname: hyper link a              action: .click
+tagname: select box select         action: select/click
+tagname: radiobutton input/button  action: .click
+tagname:checkbox     input/span    action: .click
+
+
+tagnames in webpage are 
+
+input, button, span, div, table,tbody, td,tr, li, ul,a,select,option,title,html,body
+
+
+text field, buttons, select,option, check, radio buttons
+
+hyper links = we will not have id, name, href,class
+
+
+
+-----02/8/2023-----------------------
+
+Maven build tool
+Selenium WebDriver
+-locators
+
+
+eclipse as editor -write the programs inside the eclipse
+
+we don't use this as running your programs....
+
+1.we can use command prompt to run programs
+2.project object model -pom.xml --add dependences(path of your downloading files)
+
+
+-----03/8/2023-----------------------
+
+-Download maven 
+https://maven.apache.org/download.cgi
+
+set-up environment variable for apache maven
+https://phoenixnap.com/kb/install-maven-windows
+
+--launch web page
+--navigated to the url
+
+selenium locators and find the elements
+
+id =done
+name =exercise 
+
+complete the registration page with name
+
+driver instance passing from one page to another page using inheritance concept
+
+used exception handling for all methods inside the class
+
+-----04/8/2023-----------------------
+
+-Xpath --selenium locator
+
+//*[@id="tblcrtac"]/tbody/tr[3]/td[3]/input
+
+
+//*[@id='tblcrtac']/tbody/tr[3]/td[3]/input --relative xpath
+
+chropath is chrome extension --add on 
+
+
+
+relative xpath=//tbody/tr[3]/td[3]/input[1]
+
+root path
+abs xpath =/html[1]/body[1]/center[1]/form[1]/div[1]/table[2]/tbody[1]/tr[3]/td[3]/input[1]
+
+Xpath methods:
+
+-contains
+-starts-with method
+-text()
+
+Xpath axes methods:
+parent
+child
+ancestor
+decendent
+following
+following-sibiling
+self
+
+
+syntax:
+
+//tagName[@attribute='attribute value']
+
+
+//input[starts-with(@name,'name')]
+
+//input[starts-with(@name,'name')][@type='text']
+
+//td[contains(text(),'Full Name')]//following::input[1]
+
+
+//button[contains(text(),'Click me')]
+
+
+
+testng --installation  --after selenium locators completed --not yet started
+
+
+html code
+<input id=123xyz234 name="123xyz234" class="input_test">
+<input id=333abc123 name="333abc123" class="input_test">
+
+-----07/8/2023-----------------------
+
+
+how to identify hyper links objects:
+
+<a href="http://www.adactin.com/HotelApp/TermsConditions.html" target="_blank">Terms &amp; Conditions</a>
+
+tagname:a
+attributes: href,target
+selenium locators: like id,name,class
+
+we consider tagname: "a" and we can use hyper link text=Terms &amp; Conditions
+
+linkText selenium locator
+partiallinkText selenium locator
+
+
+xpath=//a[contains(text(),'Terms & Conditions')]
+
+linkText= Terms & Conditions
+
+
+following: it traverse all elemments that comes after the current html tag.
+
+
+//td[contains(text(),'Full Name')]//following-sibling::td[4]
+//td[contains(text(),'Full Name')]//following-sibling::td/font[contains(text(),'Enter')]
+
+//td[text()='Choose a Rediffmail ID']//following::td[4]
+
+//option[text()='India']//parent::select
+
+
+
+for(int i=0;i<List.size;i++){
+
+
+//select[@id='country']//child::option[i]  //.getText
+
+=dropdown list box values we can get
+
+if(driver.findelemets(by(select[@id='country']//child::option[i]  //.getText))list.get(i).equals("India")){
+
+click();
+
+}
+
+}
+
+
+
+parent  -done
+child   -done
+following  -done
+following-sibling  -done
+
+
+
+THIS,SUPER
+CONSTRUCTOR
+ENCAPUSLATION
+INHERITANCE
+PAGEFACTORY --OBJECT INSTANCE
+
+
+PAGE OBJECT MODEL  --PURE TECNICAL  --DEV, QA AUTOMATION (NEW AUTOMATION)
+PAGEFACTORY
+
+generate testng report +extend or alure report
+
+CUCUMBER --- BA,CUSTOMER  --MUST
+SCENARIO
+SCENARIOOUTLINE
+TAG
+DATATABLE
+EXAMPLES
+
+
+scenario outline
+
+pass values from .feature file into .java file
+
+i want to click on "login" button
+
+i want to click on "submit" button
+
+
+generate testng report +extend or alure report
+
+BDD test cases --automate
+
+
+
+
+TESTNG -- FRAMEWORK
+IF MY TESTS FAILE -HOW TO RERUN FAILED TEST CASES
+
+run test cases in order
+
+generate testng report +extend or allure report
+
+run script parallel
+pass parameters through xml file(browser name pass xml file)
+
+
+
+CUCUMBER WITH JSON --HTML REPORTS BETTERN EXTENT REPORT, ALLURE REPORT
+
+
+----08/8/2023-----------------------
+parent  -done :immediate parent
+child   -done : 
+following  -done
+following-sibling  -done
+
+
+Xpath axes methods:
+ancestor:  parents, grandparents, great grand parents...
+descendant: children, grandchildren.... 
+self
+
+how to identify text objects:
+
+hyper links we can consider as text()
+
+----09/8/2023-----------------------
+
+Testng framework
+
+-No need of main method, we need to run with testng 
+-no need of static methods
+-need method name as alpah order
+-no need of try catch block
+-we will get report as passed and failed
+
+
+----10/8/2023-----------------------
+
+
+-@Test
+-@BeforeClass,@AfterClass
+-@Parameter
+-execute tests from testng.xml file
+-mutiple browsers execution like chrome, ff, safare
+
+
+----11/8/2023-----------------------
+DataProvider
+
+Excel sheet reading
+Excel sheet writing
+
+
+jar files = POI jar files
+
+Class XSSFWorkbook   = excel file
+Class XSSFSheet      = create sheet inside the file
+
+XSSFRow = class      = rows in sheet
+XSSFCell = class     = columns in sheet
+
+ //read file = FileInputStream
+ //write file = FileOutStream
+
+
+----12/8/2023-----------------------
+
+dataProvider  --arrays, method return type
+
+
+
+----14/8/2023-----------------------
+
+cssSelector 
+WebTable  -- collection api framework
+
+
+
+
+
+

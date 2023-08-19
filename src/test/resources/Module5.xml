@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="HotelAppSuite">
+  <test name="xyz">
+    <classes>
+      <class name="Module5.testng_alwaysrun_depedendsonmethod"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+  
+   <test name="abc">
+    <classes>
+      <class name="Module4.testng_framework"/>
+    </classes>
+  </test> <!-- Test -->
+  
+</suite> <!-- Suite -->

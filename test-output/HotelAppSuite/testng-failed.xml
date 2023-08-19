@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [HotelAppSuite]">
+  <test thread-count="5" name="test_with_safari(failed)">
+    <parameter name="browserType" value="safari"/>
+    <classes>
+      <class name="Module5.HotelAppTesting">
+        <methods>
+          <include name="openBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="searchHotelApp"/>
+          <include name="loginHotelApp"/>
+        </methods>
+      </class> <!-- Module5.HotelAppTesting -->
+    </classes>
+  </test> <!-- test_with_safari(failed) -->
+</suite> <!-- Failed suite [HotelAppSuite] -->

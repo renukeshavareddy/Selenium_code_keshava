@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="HotelAppSuite">
+	<test name="xyz">
+		<packages>
+			<package name="Module4" />
+		</packages>
+	</test> <!-- Test -->
+</suite> <!--
+Suite -->

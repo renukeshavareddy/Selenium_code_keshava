@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="HotelAppSuite">
+	
+	<test name="test_with_chrome1">
+		<parameter name="browserType" value="chrome" />
+		<classes>
+			<class name="Module5.HotelAppTesting" />
+		</classes>
+	</test> 
+	
+	<test name="test_with_safari">
+		<parameter name="browserType" value="safari" />
+		<classes>
+			<class name="Module5.HotelAppTesting" />
+		</classes>
+	</test> 
+	
+	
+	<test name="test_with_firefox">
+		<parameter name="browserType" value="firefox" />
+		<classes>
+			<class name="Module5.HotelAppTesting" />
+		</classes>
+	</test> 
+	
+	
+	
+</suite> <!--
+Suite -->
