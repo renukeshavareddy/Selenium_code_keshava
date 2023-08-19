@@ -15,6 +15,7 @@ public class Selenium_Demo {
 		driver.get("https://adactinhotelapp.com/");
 		
 		//Adding comment
+		//Adding comments from server
 		
 	}
 
